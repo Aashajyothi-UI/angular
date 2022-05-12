@@ -3,6 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  baseURL:"https://crudcrud.com/api/3fa7e39eec0949aca02a48283c88f870/user",     
+  baseURL1:" http://localhost:3000/Userlist",
+  // baseURL1:"https://jsonplaceholder.typicode.com/comments",
   production: false
 };
 

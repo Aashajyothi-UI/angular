@@ -1,0 +1,6 @@
+<p>parent works!</p>
+<p>{{msging}}</p>
+<input [(ngModel)]="name" type="text"/>
+
+<button class="btn btn-primary" (click)="onsubmit()">click</button>
+<app-child *ngIf="ischild" [msg]="message" [Name]="name" (otpFromChild) = "receiveChildData($event)"></app-child>

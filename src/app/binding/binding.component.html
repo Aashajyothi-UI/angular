@@ -1,0 +1,16 @@
+<div class="container">
+<p>twoway binding!</p>
+Enter Your Name:<input type="text" [(ngModel)]="fullname"/><br/>
+Your Name is:{{fullname}}<br/><br/>
+
+
+<p>Property Binding!</p>
+<img alt="item" [src]="itemImageUrl"><br/>
+<br/>
+
+<p>event Binding!</p>
+
+<button class="btn btn-primary" (click)="onClick()">click</button>
+
+<h5 *ngIf="h1style">event binding works</h5>
+</div>

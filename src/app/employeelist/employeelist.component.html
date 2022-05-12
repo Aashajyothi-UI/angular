@@ -1,0 +1,28 @@
+<h5 class="py-4 text-center" style="color:black;font-family:arial;"> EmployeList </h5>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Mail</th>
+        <th>password</th>
+        <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+        <td>{{emp._id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.mobile}}</td>
+        <td>{{emp.email}}</td>
+       
+        <td>
+          <button type="button" class="btn btn-outline-primary" (click)="showEdit(emp._id)">Edit</button>
+           </td>
+          <td> <button type="submit" class="btn btn-outline-danger" (click)="deleteEmployee(emp._id)">Delete</button>
+          </td>
+    </tr>
+    </tbody>
+</table>
+

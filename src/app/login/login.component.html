@@ -1,34 +1,49 @@
 <body>
-    <div class="container-fluid">
-      <div class="container Registration ">
-        <div class=" card">
+  <div class="container-fluid">
+    <div class="container">
+      <div class=" card loginform">
 
-          <div class="row">
-              <div class="col-md-6 content">
-               
-      <p class="about">At People Tech, success is driven by the idea that our customers, employees and community are our family</p>
-                
-              </div>
-              <div class="col-md-6">
-                  <div class="login ">
-                <h4>Login Form</h4>
-                  <form >
-                    <div class="mb-2">
-                      <label for="exampleInputEmail1" class="form-label">Email address<span>*</span></label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="row">
+          <div class="col-md-6 content">
+
+            <p class="about">At People Tech, success is driven by the idea that our customers, employees and community
+              are our family</p>
+
+          </div>
+          <div class="col-md-6">
+            <div class="login ">
+              <h4>Login Form</h4>
+              <form [formGroup]="loginForm" class="login-form-container" >
+                <div class="mb-2">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Email address<span>*</span></label>
+                    <input type="email" formControlName="email" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" id="exampleInputEmail1"
+                      aria-describedby="emailHelp">
+                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                      <div *ngIf="f['email'].errors['required']">Email is required</div>
                     </div>
-                      <div class="mb-2">
-                        <label for="password" class="form-label">Password<span>*</span></label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                      </div>
-                      <div class="text-center">
-                      <button type="submit" routerLink="/home" class="btn submit">Login</button>
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <div class="form-group">
+                    <label for="password" class="form-label">Password<span>*</span></label>
+                    <input type="password" formControlName="password" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" id="exampleInputPassword1">
+                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                      <div *ngIf="f['password'].errors['required']">Password is required</div>
+                      <div *ngIf="f['password'].errors['minlength']">Password at least 6</div>
                     </div>
-                    </form> 
-              </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" (click)="login(loginForm.value)" class="btn submit">Login</button>
+                </div>
+              </form>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
-  </body>
+</body>
