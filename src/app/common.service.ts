@@ -13,7 +13,7 @@ export class CommonService {
  
 
   baseUrl:any = environment.baseURL;
-  baseUrl1:any = environment.baseURL1;
+  baseUrl1:any = environment.loginurl;
 
   constructor(private http:HttpClient) { }
 
