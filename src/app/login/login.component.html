@@ -2,18 +2,17 @@
   <div class="container-fluid">
     <div class="container">
       <div class=" card loginform">
-
         <div class="row">
-          <div class="col-md-6 content">
-
-            <p class="about">At People Tech, success is driven by the idea that our customers, employees and community
-              are our family</p>
-
+          <div class="col-md-6" id="grad1">
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+              <p class="about text-white">At People Tech, success is driven by the idea that our customers, employees and community
+                are our family</p>
+            </div>
           </div>
           <div class="col-md-6">
             <div class="login ">
               <h4>Login Form</h4>
-              <form [formGroup]="loginForm" class="login-form-container" >
+              <form [formGroup]="loginForm" class="login-form-container">
                 <div class="mb-2">
                   <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label">Email address<span>*</span></label>
@@ -21,7 +20,10 @@
                       [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" id="exampleInputEmail1"
                       aria-describedby="emailHelp">
                     <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                      <div *ngIf="f['email'].errors['required']">Email is required</div>
+                      <div *ngIf="f['email'].errors['required']">Email is required!</div>
+                      <div *ngIf="f['email'].errors['pattern']">The email address must contain at least the @ & .
+                        character!
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,157 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Userlist": [
+    {
+      "FirstName": "shreesha",
+      "email": "shree@gmail.com",
+      "Mobile": 8999876543,
+      "id": 2,
+      "password": "1234567",
+      "repassword": "1234567"
+    },
+    {
+      "FirstName": "elavarsan",
+      "email": "ela@gmail.com",
+      "Mobile": 9888765676,
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "FirstName": "ram",
+      "email": "ram@gmail.com",
+      "Mobile": 9888767654,
+      "city": "Delhi",
+      "gender": "Male",
+      "Technologies": true,
+      "password": "123456789",
+      "repassword": "123456789",
+      "id": 4
+    },
+    {
+      "FirstName": "hari",
+      "email": "hari@gmail.com",
+      "Mobile": 9888768898,
+      "city": "Hydrabad",
+      "gender": "Female",
+      "Technologies": true,
+      "password": "hari@123",
+      "repassword": "hari@123",
+      "id": 5
+    },
+    {
+      "FirstName": "dgfd",
+      "email": "re@gm.co",
+      "Mobile": 8777678876,
+      "city": "Chennai",
+      "gender": "Male",
+      "Technologies": true,
+      "password": "123321",
+      "repassword": "123321",
+      "id": 6
+    },
+    {
+      "FirstName": "Avika",
+      "email": "avika@gmail.com",
+      "Mobile": 9888765432,
+      "city": "Chennai",
+      "gender": "Female",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 7
+    },
+    {
+      "FirstName": "avika",
+      "email": "avi@gmail.com",
+      "Mobile": 9888767654,
+      "city": "Hydrabad",
+      "gender": "Female",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 8
+    },
+    {
+      "FirstName": "Arjun",
+      "email": "arjun@gmail.com",
+      "Mobile": 8777656543,
+      "city": "Chennai",
+      "gender": "Male",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 9
+    },
+    {
+      "FirstName": "sairam",
+      "email": "dfsdf@g.com",
+      "Mobile": 9888765432,
+      "city": "Hydrabad",
+      "gender": "Male",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 10
+    },
+    {
+      "FirstName": "ramrao",
+      "email": "ram@gmail.com",
+      "Mobile": 9888765432,
+      "city": "Chennai",
+      "gender": "Male",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 11
+    },
+    {
+      "FirstName": "gdfgdf",
+      "email": "sas@gmail.com",
+      "Mobile": 9888767898,
+      "city": "Hydrabad",
+      "gender": "male",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 12
+    },
+    {
+      "FirstName": "dsdsrr",
+      "email": "re@gm.co",
+      "Mobile": 8777656789,
+      "city": "Chennai",
+      "gender": "male",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 13
+    },
+    {
+      "FirstName": "elaaaa",
+      "email": "ela@gmail.com",
+      "Mobile": 9888876787,
+      "city": "Hydrabad",
+      "gender": "female",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 14
+    }
+  ]
+}
