@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+
 import { RegistrationComponent } from './registration/registration.component';
 import { PlotlyModule } from 'angular-plotly.js';
 
@@ -22,6 +23,14 @@ import { EmpeditComponent } from './empedit/empedit.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { BindingComponent } from './binding/binding.component';
+import { HeaderComponent } from './header/header.component';
+import { DemoComponent } from './demo/demo.component';
+import { LifecyclehookComponent } from './lifecyclehook/lifecyclehook.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+import{MatButtonModule}  from '@angular/material/button';
+import{MatIconModule} from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { OAuthModule } from 'angular-oauth2-oidc';
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
@@ -40,7 +49,12 @@ PlotlyModule.plotlyjs = PlotlyJS;
     EmpeditComponent,
     ParentComponent,
     ChildComponent,
-    BindingComponent 
+    BindingComponent,
+    HeaderComponent,
+    DemoComponent,
+    LifecyclehookComponent,
+    YoutubeComponent,
+   
 
   ],
   imports: [
@@ -50,7 +64,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     HttpClientModule,
     FormsModule,
     PlotlyModule,
-   
+    MatButtonModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

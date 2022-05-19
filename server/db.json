@@ -152,6 +152,17 @@
       "password": "123456",
       "repassword": "123456",
       "id": 14
+    },
+    {
+      "FirstName": "avikarao",
+      "email": "avika@gmail.com",
+      "Mobile": 9888765432,
+      "city": "Hydrabad",
+      "gender": "female",
+      "Technologies": true,
+      "password": "123456",
+      "repassword": "123456",
+      "id": 15
     }
   ]
 }

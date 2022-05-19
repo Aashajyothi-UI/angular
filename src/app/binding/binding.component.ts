@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-binding',
@@ -13,13 +14,19 @@ export class BindingComponent implements OnInit {
   itemImageUrl="assets/peopleteck1.jpg";
   h1style: boolean=false;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
   onClick(){
   this.h1style =!this.h1style;
+  this.route.navigate(['/navbar'])
   }
-
+  @HostListener('unloaded')
+  ngOnDestroy(): void {
+    console.log('Items destroyed');
+  }
 }
+
+
 

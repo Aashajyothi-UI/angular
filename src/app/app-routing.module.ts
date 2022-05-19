@@ -15,10 +15,16 @@ import { EmpeditComponent } from './empedit/empedit.component';
 import { BindingComponent } from './binding/binding.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
+import { HeaderComponent } from './header/header.component';
+import { LifecyclehookComponent } from './lifecyclehook/lifecyclehook.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 const routes: Routes = [
-  { path: '', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent},
+  { path: '', component: LoginComponent },
+  { path: 'youtube', component: YoutubeComponent },
+  { path: 'hooks', component: LifecyclehookComponent },
+  { path: 'navbar', component: HeaderComponent },
   { path: 'binding', component: BindingComponent },
   { path: 'child', component: ChildComponent },
   { path: 'parent', component: ParentComponent },
@@ -32,7 +38,7 @@ const routes: Routes = [
   { path: 'graphs', component: GraphsComponent,canActivate:[AuthGuard] },
   { path: 'home', component: HomeComponent,canActivate:[AuthGuard],
 },
-  { path: '',   redirectTo: '/login', pathMatch: 'full' },
+  // { path: '',   redirectTo: '/login', pathMatch: 'full' },
 
 ];
 

@@ -4,15 +4,9 @@
         <div class="col-lg-12  rounded p-4">
     <input type="taxt" #input placeholder="enter here"/>
     <button type="submit" class="btn btn-primary m-4" (click)="onsubmit(input)">submit</button>
-  
-    <app-demo [value]="inputtext" *ngIf="destroy">
-        <h4>this is projected afContentInit {{inputtext}}</h4>
-    </app-demo>
-</div>
-</div>
-
-</div>
-<div class="text-center">
-<button (click)="OnClick()" class="btn btn-success" >Destroy</button>
-</div>
-
+    </div>
+    <p>The text you entered is:{{inputtext}}</p>
+   
+    </div>
+    <a routerLink="/home" >here navigate to home</a>
+    </div>

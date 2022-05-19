@@ -1,51 +1,80 @@
-<body>
-  <div class="container-fluid">
-    <div class="container">
-      <div class=" card loginform">
-        <div class="row">
-          <div class="col-md-6" id="grad1">
+<div *ngIf="!isLoggedIn()" class="container-fluid">
+  <div class="container">
+    <div class=" card loginform">
+      <div class="row">
+        <!-- <div class="col-md-6" id="grad1">
             <div class="w-100 h-100 d-flex align-items-center justify-content-center">
               <p class="about text-white">At People Tech, success is driven by the idea that our customers, employees and community
                 are our family</p>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="login ">
-              <h4>Login Form</h4>
-              <form [formGroup]="loginForm" class="login-form-container">
-                <div class="mb-2">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1" class="form-label">Email address<span>*</span></label>
-                    <input type="email" formControlName="email" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                      <div *ngIf="f['email'].errors['required']">Email is required!</div>
-                      <div *ngIf="f['email'].errors['pattern']">The email address must contain at least the @ & .
-                        character!
-                      </div>
+          </div>  -->
+        <div class="col-md-12">
+          <div class="login ">
+            <h4>Login Form</h4>
+            <form [formGroup]="loginForm" class="login-form-container">
+              <div class="mb-2">
+                <div class="form-group">
+                  <label for="exampleInputEmail1" class="form-label">Email address<span>*</span></label>
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+                  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email is required!</div>
+                    <div *ngIf="f['email'].errors['pattern']">The email address must contain at least the @ & .
+                      character!
                     </div>
                   </div>
                 </div>
-                <div class="mb-2">
-                  <div class="form-group">
-                    <label for="password" class="form-label">Password<span>*</span></label>
-                    <input type="password" formControlName="password" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" id="exampleInputPassword1">
-                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                      <div *ngIf="f['password'].errors['required']">Password is required</div>
-                      <div *ngIf="f['password'].errors['minlength']">Password at least 6</div>
-                    </div>
+              </div>
+              <div class="mb-2">
+                <div class="form-group">
+                  <label for="password" class="form-label">Password<span>*</span></label>
+                  <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" id="exampleInputPassword1">
+                  <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                    <div *ngIf="f['password'].errors['minlength']">Password at least 6</div>
                   </div>
                 </div>
-                <div class="text-center">
-                  <button type="submit" (click)="login(loginForm.value)" class="btn submit">Login</button>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="text-center">
+                    <button type="submit" (click)="login(loginForm.value)" class="btn submit m-2">Login</button>
+                  </div>
+                  <div class="text-center">
+                    <p>or login with</p>
+                    <button mat-mini-fab color="primary" type="button" class="m-2" (click)="googleLogin()"
+                      aria-label="Example icon button with a plus one icon">
+                      <mat-icon> email</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
                 </div>
-              </form>
-            </div>
+              </div>
+
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
+
+<div *ngIf="isLoggedIn()" class="text-center">
+  <h1>Hi and welcome!</h1>
+  <h1>Name: {{userInfo?.info?.name}}</h1>
+  <img src="{{userInfo?.info?.picture}}" />
+  <br />
+  <br />
+  <br />
+  <button class="btn btn-primary" (click)="getEmails()">List Emails</button>
+  <br />
+  <div class="" *ngFor="let snippet of mailSnippets">
+    {{ snippet }}
+  </div>
+
+  <button class="btn btn-danger m-5" (click)="logout()">Logout from Google</button>
+</div>

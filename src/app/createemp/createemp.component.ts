@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
@@ -39,6 +39,8 @@ export class CreateempComponent implements OnInit {
   get f(): { [key: string]: AbstractControl } {
     return this.empform.controls;
   }
+  
+
   onSubmit() {
     this.submitted = true;
 
