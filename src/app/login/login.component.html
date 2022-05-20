@@ -48,7 +48,7 @@
                       aria-label="Example icon button with a plus one icon">
                       <mat-icon> email</mat-icon>
                     </button>
-                    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+                    <button mat-mini-fab color="warn" (click)="signInWithFB()"  aria-label="Example icon button with a filter list icon">
                       <mat-icon>delete</mat-icon>
                     </button>
                   </div>
@@ -77,4 +77,12 @@
   </div>
 
   <button class="btn btn-danger m-5" (click)="logout()">Logout from Google</button>
+</div>
+
+
+
+<img src="{{ user.photoUrl }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
 </div>
