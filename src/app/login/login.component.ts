@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import { GoogleApiService, UserInfo } from '../google-api.service';
 import { lastValueFrom } from 'rxjs';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { FacebookLoginProvider } from "angularx-social-login";
 
 @Component({
   selector: 'app-login',
@@ -18,8 +20,12 @@ export class LoginComponent implements OnInit {
   userInfo?: UserInfo
   emaillist!: boolean;
   isGooglEmail: boolean = false;
+  user!: SocialUser;
+  loggedIn!: boolean;
 
-  constructor(private formBuilder: FormBuilder, private commonserv: CommonService, private router: Router, private readonly googleApi: GoogleApiService) {
+  constructor(private formBuilder: FormBuilder, private commonserv: CommonService, private router: Router, private readonly googleApi: GoogleApiService,private authService: SocialAuthService) {
+
+  
 
     googleApi.userProfileSubject.subscribe(info => {
       this.userInfo = info
@@ -39,7 +45,13 @@ export class LoginComponent implements OnInit {
     this.commonserv.getAllUsers().subscribe((data: any) => {
       this.users = data;
     })
+
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
+  
 
   googleLogin() {
     this.googleApi.googleLogin();
@@ -93,4 +105,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
+
 }
+
+

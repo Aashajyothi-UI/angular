@@ -31,6 +31,8 @@ import{MatButtonModule}  from '@angular/material/button';
 import{MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
@@ -67,9 +69,25 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
+    SocialLoginModule,
     OAuthModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+            {
+              id: FacebookLoginProvider.PROVIDER_ID,
+              provider: new FacebookLoginProvider('561602290896109')
+            }],
+            onError: (err) => {
+              console.error(err);
+            }
+          } as SocialAuthServiceConfig,
+        }
+      ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
